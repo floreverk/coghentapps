@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% load static %}
+        <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'templates/ldes.css' %}">    
+    </head>
+    <body>
+        <div>
+            <h1>LINK TO LDES</h1>
+            <a href="{{ ldes|safe }}">{{ ldes|safe }}</a>
+            <a href="../getldes"><h2>back</h2></a>
+        </div>
+    </body>
+</html>

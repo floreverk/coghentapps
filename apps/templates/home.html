@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch&family=Dosis:wght@200;300;400&family=IBM+Plex+Sans+JP&display=swap" rel="stylesheet">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'templates/home.css' %}">
+    <title>Home</title>
+</head>
+<body class='body'>
+    <div class='homegrid'>
+        <div class='leftbanner'>
+            <img class='image' src="\static\images\coghent.PNG">
+        </div>
+        <div class='main'>
+            <div class='header'>
+                <h1>COGHENT APPS</h1>
+            </div>
+            <div class='mainblock'>
+                <button class='accordion'>Tools</button>
+                <div class='panel'>
+                    <div class='panelgrid'>
+                        <div>
+                        </div>
+                        <div class='buttongrid'>
+                            <div>
+                                <button onclick="window.location.href='querybuilder'" class="dashboardbutton">
+                                    <div class="buttonlayout">
+                                        <div><img class='buttonimage' src="\static\images\query.png"></div>
+                                        <div class='buttontext'>Querybuilder</div>
+                                    </div>
+                                </button>
+                            </div>
+                            <div>
+                                <button onclick="window.location.href='getldes'" class="dashboardbutton">
+                                    <div class="buttonlayout">
+                                        <div><img class='buttonimage' src="\static\images\ldes.png"></div>
+                                        <div class='buttontext'>Get LDES</div>
+                                    </div>
+                                </button>                             
+                            </div>
+                        </div>
+                        <div>
+                        </div>
+                    </div>
+                </div>
+                <button class='accordion'>Games</button>
+                <div class='panel'>
+                    <div class='panelgrid'>
+                        <div>
+                        </div>
+                        <div class='buttongrid'>
+                            <div>
+                                <button onclick="window.location.href='randomimage'" class="qualitybutton">
+                                    <div class="buttonlayout">
+                                        <div><img class='buttonimage' src="\static\images\image.png"></div>
+                                        <div class='buttontext'>Random Image Viewer</div>
+                                    </div>
+                                </button>                             
+                            </div>
+                        </div>
+                        <div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class='rightbanner'>
+        </div>
+    </div>
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+        
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+            } else {
+                panel.style.display = "block";
+            }
+            });
+        }
+    </script>
+</body>
+</html>

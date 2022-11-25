@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% load static %}
+        <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'templates/ldes.css' %}">    
+    </head>
+    <body>
+        <h1>GET LINK TO LDES</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{form}}
+            <button type="submit">Submit</button>
+        </form>
+    </body>
+</html>
