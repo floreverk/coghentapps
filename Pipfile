@@ -8,6 +8,8 @@ django = "*"
 shell = "*"
 pandas = "*"
 pylodstorage = "*"
+whitenoise = "*"
+gunicorn = "*"
 
 [dev-packages]
 

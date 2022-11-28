@@ -1,0 +1,136 @@
+.body {
+    background-color: #fefefa;
+}
+
+.homegrid {
+    display: grid;
+    grid-template-columns: 15% 80% 5%;
+}
+
+.image {
+    object-fit: cover;
+    width: 80%;
+    margin-top: 10px;
+    object-position: center center;
+}    
+
+.header {
+    width: 100%;
+}
+
+h1 {
+    font-family: 'Dosis', sans-serif;
+    font-size: 2cm;
+    margin-left: 10px;
+}
+
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    margin-top: 10px;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: 1px;
+    border-radius: 10px;
+    transition: 0.4s;
+    font-family: 'Dosis', sans-serif;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.accordion:hover {
+    background-color: #ccc;
+}
+
+.panel {
+    box-sizing: border-box;
+    width: 100%;
+    display: none;
+    overflow: hidden;
+}
+
+.panelgrid {
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+}
+
+.buttongrid {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.dashboardbutton {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    margin-left: 5px;
+    width: 95%;
+    font-family: 'Dosis', sans-serif;
+    font-size: 25px;
+    background-color: aliceblue;
+}
+
+.dashboardbutton:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.qualitybutton {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    margin-left: 5px;
+    width: 95%;
+    font-family: 'Dosis', sans-serif;
+    font-size: 25px;
+    background-color:beige;
+}
+
+.qualitybutton:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.manualbutton {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    margin-left: 5px;
+    width: 95%;
+    font-family: 'Dosis', sans-serif;
+    font-size: 25px;
+    background-color: linen;
+}
+
+.manualbutton:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.toolbutton {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    margin-left: 5px;
+    width: 95%;
+    font-family: 'Dosis', sans-serif;
+    font-size: 25px;
+    background-color: blanchedalmond;
+}
+
+.toolbutton:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.buttonlayout {
+    display: grid;
+    grid-template-columns: 30% 70%;
+}
+
+.buttonimage {
+    max-height: 50px;
+}
+
+.buttontext {
+    text-align: left;
+    margin-top: 10px;
+}
