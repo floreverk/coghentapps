@@ -1,1 +1,1 @@
-web: gunicorn coghentapps.wsgi
+web: gunicorn coghentapps.wsgi --timeout 200

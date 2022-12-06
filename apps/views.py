@@ -379,9 +379,8 @@ def collage(request):
                         iiif_manifests.append(afbeelding)
                         webplatform_links.append(webplatform)
                         titels.append(titel)
+             
 
-
-                
                 if len(iiif_manifests) > 9:
                     iiif_manifests = iiif_manifests[:9]
                     data = zip(iiif_manifests, webplatform_links, titels)
