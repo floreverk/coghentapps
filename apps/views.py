@@ -356,7 +356,7 @@ def collage(request):
 
             
             if len(qlod) == 0:
-                return render(request, 'error.html')
+                return render(request, 'error2.html')
             else:
                 iiif_manifests = []
                 webplatform_links = []
