@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'templates/collage.css' %}">    
+    <title>Collage</title>
+</head>
+<body>
+    <h1>Collage van de Gentenaar</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{form}}
+        <button type="submit">Zoeken!</button>
+    </form>
+    <div class='grid'>
+        {% for afbeelding in data %}
+        <div class='image'>
+            <a href='{{ afbeelding.1 }}'><img title='{{ afbeelding.2 }}' src='{{ afbeelding.0 }}'></a>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

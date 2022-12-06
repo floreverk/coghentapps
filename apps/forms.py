@@ -29,3 +29,6 @@ class EndpointForm(forms.Form):
 class ContactForm(forms.Form):
     institution = forms.ChoiceField(choices=[('hva', 'Huis van Alijn'), ('dmg', 'Design Museum Gent'), ('industriemuseum', 'Industriemuseum'), ('stam', 'STAM Gent'), ('archief', 'Archief Gent')])
     objectnumber = forms.CharField(required=True)
+
+class zoektermForm(forms.Form):
+    zoekterm = forms.CharField(required=True)

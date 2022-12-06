@@ -5,5 +5,6 @@ urlpatterns = [
     path("", views.home),
     path("querybuilder", views.buildquery),
     path("getldes", views.getldes),
-    path("randomimage", views.image)
+    path("randomimage", views.image),
+    path("collage", views.collage)
 ]
