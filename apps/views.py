@@ -388,6 +388,7 @@ def collage(request):
                     print(data)
                     return render (request, 'collage.html', {'form': form, 'data':data})
                 else:
+                    data = zip(iiif_manifests, webplatform_links, titels)
                     return render (request, 'collage.html', {'form': form, 'data':data})
         else:
             return render(request, 'error2.html')
