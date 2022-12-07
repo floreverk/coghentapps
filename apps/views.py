@@ -185,6 +185,56 @@ def buildquery(request):
                 datum = ''
                 variabledatum = ''
                 filterdatum = ''
+
+            if form.cleaned_data['techniek'] == True:
+                techniek = '''?o cidoc:P108i_was_produced_by ?produced.</br>
+                ?produced cidoc:P32_used_general_technique ?technique.</br>
+                ?technique cidoc:P2_has_type ?hastype.</br>
+                ?hastype skos:prefLabel ?techniek.</br>
+                '''
+                variabletechniek = '?techniek'
+                if form.cleaned_data['techniekfilter'] == '':
+                    filtertechniek = ''
+                else:
+                    techniekfilter = form.cleaned_data['techniekfilter']
+                    filtertechniek = 'FILTER (regex(?techniek, "'+techniekfilter+'", "i"))'
+            else:
+                techniek = ''
+                variabletechniek = ''
+                filtertechniek = ''
+            
+            if form.cleaned_data['materiaal'] == True:
+                materiaal = '''?o cidoc:P45_consists_of ?consists.</br>
+                ?consists cidoc:P2_has_type ?materiaaltype.</br>
+                ?materiaaltype skos:prefLabel ?materiaal.</br>
+                '''
+                variablemateriaal = '?materiaal'
+                if form.cleaned_data['materiaalfilter'] == '':
+                    filtermateriaal = ''
+                else:
+                    materiaalfilter = form.cleaned_data['materiaalfilter']
+                    filtermateriaal = 'FILTER (regex(?materiaal, "'+materiaalfilter+'", "i"))'
+            else:
+                materiaal = ''
+                variablemateriaal = ''
+                filtermateriaal = ''
+
+            if form.cleaned_data['plaats'] == True:
+                plaats = '''?o cidoc:P108i_was_produced_by ?produced.</br>
+                ?produced cidoc:P7_took_place_at ?tookplace.</br>
+                ?tookplace la:equivalent ?plaatsequivalent.</br>
+                ?plaatsequivalent skos:prefLabel ?plaats.</br>
+                '''
+                variableplaats = '?plaats'
+                if form.cleaned_data['plaatsfilter'] == '':
+                    filterplaats = ''
+                else:
+                    plaatsfilter = form.cleaned_data['plaatsfilter']
+                    filterplaats = 'FILTER (regex(?plaats, "'+plaatsfilter+'", "i"))'
+            else:
+                plaats = ''
+                variableplaats = ''
+                filterplaats = ''
            
             return render(request, 'query.html', {'endpoint': endpoint, 'hva': hva, 'dmg': dmg, 'im': im, 'ag': ag, 'stam': stam, 
             'limit': limit, 'distinct': distinct, 'count': count, 'closecount': closecount,
@@ -196,7 +246,10 @@ def buildquery(request):
             'associatie': associatie, 'variableassociatie': variableassociatie, 'filterassociatie': filterassociatie,
             'objectnumber': objectnumber, 'variableobjectnumber': variableobjectnumber, 'filterobjectnumber': filterobjectnumber,
             'vervaardiger': vervaardiger, 'variablevervaardiger': variablevervaardiger, 'filtervervaardiger': filtervervaardiger,
-            'datum': datum, 'variabledatum': variabledatum, 'filterdatum': filterdatum})
+            'datum': datum, 'variabledatum': variabledatum, 'filterdatum': filterdatum,
+            'techniek': techniek, 'variabletechniek': variabletechniek, 'filtertechniek': filtertechniek,
+            'materiaal': materiaal, 'variablemateriaal': variablemateriaal, 'filtermateriaal': filtermateriaal,
+            'plaats': plaats, 'variableplaats': variableplaats, 'filterplaats': filterplaats})
             
     form = EndpointForm()
    
