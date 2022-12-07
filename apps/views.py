@@ -154,7 +154,6 @@ def buildquery(request):
                 ?equivalent rdfs:label ?creator.
                 '''
                 variablevervaardiger = '?creator'
-                prefixla = 'PREFIX la:&lt;https://linked.art/ns/terms/&gt;'
                 if form.cleaned_data['vervaardigerfilter'] == '':
                     filtervervaardiger = ''
                 else:
@@ -170,6 +169,11 @@ def buildquery(request):
                 prefix = 'PREFIX skos:&lt;http://www.w3.org/2004/02/skos/core#&gt;'
             else:
                 prefix = ''
+            
+            if form.cleaned_data['vervaardiger'] or form.cleaned_data['plaats']== True:
+                prefixla = 'PREFIX la:&lt;https://linked.art/ns/terms/&gt;'
+            else:
+                prefixla = ''
 
             if form.cleaned_data['datum'] == True:
                 datum = '''?o cidoc:P108i_was_produced_by ?produced.</br>
